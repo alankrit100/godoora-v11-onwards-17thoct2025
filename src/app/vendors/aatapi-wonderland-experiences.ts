@@ -1,5 +1,5 @@
 export const aatapiWonderlandExperiences = {
-        'atapi-wonderland-experiences-staging.goyaana.com': [
+        'www.atapi-wonderland-experiences.goyaana.com': [
         {
             branch: 'Aatapi Wonderland',
             branchImg: 'https://ourtourplannerpublic.s3.ap-southeast-1.amazonaws.com/Aatapi/Aatapi-branch.jpg',
