@@ -1,5 +1,5 @@
 ###### Overview
-This repository contains the updated codebase for Godoora v11 onwards, featuring recent changes, bug fixes, and upgraded dependencies. This release focuses on compatibility, security, and improved modularity.
+This repository contains the updated codebase for the GoYaana production Codebase, featuring recent changes, bug fixes, and upgraded dependencies. This release focuses on compatibility, security, and improved modularity.
 
 ## Prerequisites
 Before running the app, ensure the following are installed:
@@ -11,23 +11,24 @@ npm v9.x or higher
 Angular CLI v18+
 
  ### Install via:
-npm install -g @angular/cli
+npm install
+npm install --legacy-peer-deps
 
 ### Installation
 Clone the repo and install dependencies:
-## step 1: git clone https://github.com/your-org/godoora-v11-onwards.git
-cd godoora-v11-onwards
+## step 1: git clone https://github.com/your-org/godoora-v11-onwards-17thoct2025.git (THis is to be updated later with the official aws link)
+cd godoora-ui-prod
 ## step 2: go to vs code and open the terminal.
 
 ## step 3: Run the following command in the terminal: npm install 
-if the command throws error, try npm install --legacy-peer-deps or --force(last resort).
+if the command throws error, try npm install --legacy-peer-deps or --force(last resort.. DO NOT TRY THIS BEFORE TRYING --legacy-peer-deps).
 
 
 ### Running the App Locally
 ## Start the development server:
 ng serve
 # OR 
-npm run build and then npm start 
+npm start
 
 ## Then open your browser at:
 http://localhost:4200/
@@ -38,7 +39,8 @@ http://localhost:4200/
 1. Social login library conflict with Angular 18	
 Workaround: use --legacy-peer-deps
 2. Windows firewall was blocking the execution of scripts from VS code.  FIX: Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned.
-3. node-gyp ERR! find VS You need to install the latest version of Visual Studio including the "Desktop development with C++" workload. - > FIX: install the necessary SDK components and the c++ components in the visual studio application.
+3. node-gyp ERR! find VS You need to install the latest version of Visual Studio including the "Desktop development with C++" workload. - > FIX: THis problem usually arises when the system is trying to recursively find the folder.
+if you have something like.. godoora-ui-prod -> godoora-ui-prod and then in that the source-code is there, it will throw this error... delete a duplicate folder to fix the error.
 
 
 ### Recent Changes
@@ -56,6 +58,9 @@ Workaround: use --legacy-peer-deps
 
 ✅ changed the css styling of login-modal to match the previous styling of the prod application(angular version 8).
 
+✅ Booked-slot and booked-list css styles have been updated.
+
+✅ Created a new Vendors folder, for easy access for the future coders to edit the hotel informations respectively... all of the files of the Vendors folder has been imported in the app.const.ts file.
 
 
 ### Changes in the package.json file:
@@ -68,7 +73,7 @@ NOTE: The package.json file is being referred as this would cover all the major 
  - Major dev tooling upgrade: TypeScript, Karma, Jasmine to versions 5.5.4, and v6+ ranges respectively.
  - Replaced deprecated angularx-social-login with @abacritt/angularx-social-login
  - Removed ngx-ui-switch
- - cordova-res still exists with a vulnerable sharp dependency
+ 
 
 
 ### Files Modified:
@@ -89,5 +94,5 @@ Each of these files has been imported under a new class called `Vendors` in the 
 - This approach makes the codebase **cleaner and less bulky**.
 - Editors and collaborators now have **more freedom** to make updates independently, without causing merge conflicts or clutter — resulting in a **hassle-free development environment**.
 
-   Apart from these, all the standard Angular and Ionic migration procedure had been followed on an incremental approach so it would be difficult to keep track of each one of them. However, The application has been upgraded with utmost caution and special attention has been given to all the breaking and deprecating changes in the codebase; hence leading to successfull upgradation and working of the production website.
+Apart from these, all the standard Angular and Ionic migration procedure had been followed on an incremental approach so it would be difficult to keep track of each one of them. However, The application has been upgraded with utmost caution and special attention has been given to all the breaking and deprecating changes in the codebase; hence leading to successfull upgradation and working of the production website.
 
